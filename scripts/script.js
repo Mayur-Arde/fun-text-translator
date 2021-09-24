@@ -14,8 +14,8 @@ async function translateText(){
 
   if (input == '' || input == null){
     alert('Text Requird');
-  }else{
-    const url = `https://api.funtranslations.com/translate/${languages}.json?text=${input}`
+  }else { 
+    const url = `https://api.funtranslations.com/translate/${languages}.json?text=${input}`;
 
     console.log(url);
     const data = await fetch(url);
@@ -39,6 +39,7 @@ btnTranslate.addEventListener('click', translateText);
 document.addEventListener('keydown', checkKey);
 selected.addEventListener('change', e =>{
   languages = (e.target.value);
+  translateText();
   console.log(languages)
 })
 
